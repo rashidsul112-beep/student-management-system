@@ -86,7 +86,7 @@ td button {
   padding: 10px;
   margin: 10px 0;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #32e993;
 }
 
 .login-box button {
@@ -95,7 +95,7 @@ td button {
   border: none;
   border-radius: 8px;
   background: #667eea;
-  color: white;
+  color: rgb(165, 46, 235);
   cursor: pointer;
 }
 
