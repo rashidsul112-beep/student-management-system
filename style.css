@@ -228,3 +228,16 @@ tr:hover {
 #csvFile {
   margin: 10px 0;
 }
+.import-btn {
+  margin: 15px 0;
+  padding: 10px 20px;
+  background: #dd4ee2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.import-btn:hover {
+  background: #b4e640;
+}
