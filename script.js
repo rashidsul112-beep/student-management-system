@@ -1,5 +1,10 @@
-const role = document.getElementById("role").value;
-localStorage.setItem("userRole", role);
+const role = localStorage.getItem("userRole");
+
+if (role === "staff") {
+  document.querySelector(".student-form").style.display = "none";
+  document.querySelector(".export-btn").style.display = "none";
+  document.getElementById("csvFile").style.display = "none";
+}
 
 if (window.location.pathname.includes("index.html")) {
     if (localStorage.getItem("loggedIn") !== "true") {
@@ -118,8 +123,6 @@ function login() {
     let password = document.getElementById("password").value;
 const role = document.getElementById("role").value;
 localStorage.setItem("userRole", role);
-document.getElementById("roleDisplay").innerText =
-  "Logged in as: " + role.toUpperCase();
 
     // Simple credentials (for now)
     if (username === "Rashid" && password === "6810") {
@@ -209,8 +212,38 @@ modeBtn.addEventListener("click", function () {
   }
 });
 function importCSV() {
-   // logic ya import
+    const fileInput = document.getElementById("csvFile");
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert("Please select the file of CSV");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        const lines = e.target.result.split("\n");
+        let students = JSON.parse(localStorage.getItem("students")) || [];
+
+        // Skip header (First line)
+        for (let i = 1; i < lines.length; i++) {
+            let data = lines[i].trim();
+            if (data === "") continue;
+
+            let [name, regNo, course] = data.split(",");
+
+            students.push({
+                name: name,
+                regNo: regNo,
+                course: course
+            });
+        }
+
+        localStorage.setItem("students", JSON.stringify(students));
+        displayStudents();
+        alert("Students imported successfully!");
+    };
+
+    reader.readAsText(file);
 }
-
-
-
