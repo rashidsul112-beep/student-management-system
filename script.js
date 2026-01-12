@@ -1,3 +1,6 @@
+const role = document.getElementById("role").value;
+localStorage.setItem("userRole", role);
+
 if (window.location.pathname.includes("index.html")) {
     if (localStorage.getItem("loggedIn") !== "true") {
         window.location.href = "login.html";
@@ -113,6 +116,8 @@ function searchStudent() {
 function login() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
+const role = document.getElementById("role").value;
+localStorage.setItem("userRole", role);
 
     // Simple credentials (for now)
     if (username === "Rashid" && password === "6810") {
@@ -204,4 +209,5 @@ modeBtn.addEventListener("click", function () {
 function importCSV() {
    // logic ya import
 }
+
 
