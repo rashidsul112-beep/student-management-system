@@ -241,3 +241,13 @@ tr:hover {
 .import-btn:hover {
   background: #b4e640;
 }
+/* Toggle Button */
+.mode-btn {
+  margin-left: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
