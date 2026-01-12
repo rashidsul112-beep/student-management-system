@@ -118,6 +118,8 @@ function login() {
     let password = document.getElementById("password").value;
 const role = document.getElementById("role").value;
 localStorage.setItem("userRole", role);
+document.getElementById("roleDisplay").innerText =
+  "Logged in as: " + role.toUpperCase();
 
     // Simple credentials (for now)
     if (username === "Rashid" && password === "6810") {
@@ -209,5 +211,6 @@ modeBtn.addEventListener("click", function () {
 function importCSV() {
    // logic ya import
 }
+
 
 
