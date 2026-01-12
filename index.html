@@ -1,0 +1,63 @@
+<button onclick="logout()">Logout</button>
+<button id="modeBtn" class="mode-btn">Dark Mode</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Student Management System</h1>
+<section class="dashboard">
+  <div class="card">
+    <h3>Total Students</h3>
+    <p id="totalStudents">0</p>
+  </div>
+
+  <button onclick="exportCSV()" class="export-btn">Export CSV</button>
+
+  <div class="card">
+    <h3>Total Courses</h3>
+    <p id="totalCourses">0</p>
+  </div>
+</section>
+
+<section class="course-report">
+  <h2>Students Per Course</h2>
+  <ul id="courseList"></ul>
+</section>
+
+<section class="student-form">
+  <input type="text" id="name" placeholder="Student Name">
+  <input type="number" id="regNo" placeholder="Registration Number">
+  <input type="text" id="course" placeholder="Course">
+  <button type="button" onclick="addStudent()">Add Student</button>
+</section>
+
+<section class="student-list">
+  <input 
+  type="text" 
+  id="searchInput" 
+  placeholder="Search by name, reg no, or course..."
+  onkeyup="searchStudent()"
+>
+<button id="submitBtn" type="button" onclick="addStudent()">Add Student</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Reg No</th>
+        <th>Course</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="studentTable"></tbody>
+  </table>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
