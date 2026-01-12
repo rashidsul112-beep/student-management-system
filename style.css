@@ -75,7 +75,7 @@ td button {
   max-width: 350px;
   margin: 100px auto;
   padding: 25px;
-  background: white;
+  background: rgb(222, 252, 56);
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   text-align: center;
@@ -94,7 +94,7 @@ td button {
   padding: 10px;
   border: none;
   border-radius: 8px;
-  background: #667eea;
+  background: #14dbe2;
   color: rgb(165, 46, 235);
   cursor: pointer;
 }
