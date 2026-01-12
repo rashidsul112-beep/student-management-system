@@ -225,3 +225,6 @@ button:hover {
 tr:hover {
   background: rgba(102, 126, 234, 0.08);
 }
+#csvFile {
+  margin: 10px 0;
+}
